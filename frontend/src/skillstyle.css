@@ -13,11 +13,11 @@
     font-weight: 400;
     color: rgb(240, 145, 3);
     text-shadow: 2px 2px 5px rgb(255, 255, 255);
-    font-size: 3vw;
+    font-size: 50px;
 }
 #s-detail{
     position: relative;
-    font-size: 1.5vw;
+    font-size: 25px;
 }
 #s-cards{
  display: flex;
@@ -97,6 +97,7 @@
     background-color: rgba(165, 117, 55, 0.925);
     padding:5px 10px;
     border-radius: 10px;
+    width: 150px;
 }
 #line{
     width:120px;
@@ -118,9 +119,9 @@
 #toolkit img{
     height:35px;
 }
-@media (max-width:800px){
+@media (max-width:700px){
     #title-s {
-        font-size: 5vw;
+        font-size: 35px;
     }
     #s-detail{
         font-size: 3vw;

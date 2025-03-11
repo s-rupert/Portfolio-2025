@@ -13,27 +13,39 @@ const Homepage = ()=>{
     ]
     const [ i_3_2, set_i_3_2] = useState(i_3_2_Array[0])
     
-        useEffect(() => {
-            function randomNumberGenerator(){
-                const number = Math.floor(Math.random() * i_3_2_Array.length);
-                let C_String = i_3_2_Array[number].split("");
-                let a=0;
-                let new_String;
-            const intervalId = setInterval(() => {
-                new_String=new_String?new_String+C_String[a]:C_String[a];
-                a++;
-                if(a>=i_3_2_Array[number].length){
-                    set_i_3_2(new_String);
-                    clearInterval(intervalId);
-                    randomNumberGenerator();
-                }
-                set_i_3_2(new_String);    
-            }, 300);
-        }
-        randomNumberGenerator();
     
-        }, [])
+  useEffect(() => {
+    let intervalId;
 
+    const randomNumberGenerator = () => {
+      const number = Math.floor(Math.random() * i_3_2_Array.length);
+      const C_String = i_3_2_Array[number].split(''); // Convert string into an array of characters
+      let a = 0;
+      let new_String = '';
+
+      intervalId = setInterval(() => {
+        new_String += C_String[a]; // Append next character
+        set_i_3_2(new_String); // Update state to reveal the character
+        a++;
+
+        if (a >= C_String.length) {
+          clearInterval(intervalId); // Clear the interval when the string is fully revealed
+
+          // Restart the animation after a short delay (1 second)
+          setTimeout(() => {
+            randomNumberGenerator(); // Start the next string animation
+          }, 1000); // 1-second delay before starting a new animation
+        }
+      }, 300); // Character reveal speed (100ms per character)
+    };
+
+    randomNumberGenerator(); // Start animation when the component mounts
+
+    // Cleanup interval when component unmounts
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
         
 
     return(

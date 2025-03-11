@@ -19,11 +19,11 @@ iframe {
     font-weight: 400;
     color: rgb(240, 145, 3);
     text-shadow: 2px 2px 5px rgb(255, 255, 255);
-    font-size: 3vw;
+    font-size: 50px;
 }
 #a-detail{
     position: relative;
-    font-size: 1.5vw;
+    font-size: 25px;
 
 }
 
@@ -76,14 +76,14 @@ iframe {
 }
 @media (max-width: 800px) {
     #title-a{
-        font-size:6vw;
+        font-size:35px;
     }
     #a-detail{
         font-size:3vw ;
     }
     #y-axis, #x-axis{
         stroke-width: 1vw;
-        font-size: 2vw;
+        font-size: 15px;
     }
     
     #line{

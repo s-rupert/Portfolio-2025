@@ -50,9 +50,14 @@
   color:chocolate;
 }
 #contactForm input, #contactForm textarea, #contactForm button{
-  font-size:15px;
-  padding:10px 15px;
+  font-size:18px;
+  padding:5px 15px;
   border-radius: 10px;
+  border: 1px solid black;
+}
+#contactForm input:focus, #contactForm textarea:focus{
+  outline: none;
+  border: none;
 }
 #contactForm button{
   background-color: rgba(165, 117, 55, 0.925);
@@ -65,7 +70,6 @@
   margin-top:50px;
   width:100vw;
   background-color: rgba(165, 117, 55, 0.925);
-  Padding:10px 30px;
 }
 #contact-channels i{
   font-size:30px;
@@ -84,31 +88,42 @@
 
 @media (max-width:800px){
   
-#accomplishment-feeedback{
+#accomplishment-contact{
   flex-direction: column;
 }
-#accomplishment-container input{
-  width:80vw;
+#accomplishment-container{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
 }
-#accomplishment-container button{
-  width: 40vw;
+#accomplishment{
+  align-items: center;
+  justify-content: center;
+  width:100vw;
 }
 
-
-#accomplishment-container p{
-  width: 90vw;
+#accomplishment div p{
+  font-size: 20px;
 }
 
+#accomplishment-container #desc{
+  width: 100vw;
+}
 #contactForm{
   width:80vw;
 }
 #contactForm button{
   width: 40vw;
 }
-#accomplishment-channels{
-  Padding:5px 15px;
+#contact-channels{
+  Padding:5px 5px;
 }
-#accomplishment-channels i{
+#contact-channels i{
   font-size:25px;
+  padding:5px 25px;
+}
+#copyright{
+  font-size:15px;
 }
 }

@@ -236,28 +236,18 @@ const Project = () => {
     );
   }
 
-  const disableScroll = () => {
-    document.body.classList.add("no-scroll");
-  };
-  
-  const enableScroll = () => {
-    document.body.classList.remove("no-scroll");
-  };
-
   // identifying touch
   const [startPos, setStartPos] = useState(null);
   const [endPos, setEndPos] = useState(null);
 
   const handleStart = (event) => {
-    // event.preventDefault();
-    disableScroll();
     const x = event.clientX || event.touches?.[0]?.clientX;
     setStartPos(x);
   };
-
+  
   const handleEnd = (event) => {
-    enableScroll();
     const x = event.clientX || event.changedTouches?.[0]?.clientX;
+    console.log(x)
     setEndPos(x);
   };
 
