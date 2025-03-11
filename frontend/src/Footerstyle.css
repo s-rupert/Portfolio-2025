@@ -1,0 +1,114 @@
+#footer-section{
+    position: relative;
+    margin-top: 8vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+#accomplishment-contact{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:5vw;
+}
+#accomplishment{
+  width: 50vw;
+  display: flex;
+}
+#accomplishment div{
+  width:30%;
+  color:chocolate;
+}
+
+#accomplishment div p{
+  font-size: 25px;
+}
+
+
+#accomplishment-container #desc{
+  margin-top: 20px;
+  position: relative;
+  padding:10px 15px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 50vw;
+}
+
+#contactForm{
+  font-size:25px;
+  width:35vw;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: left;
+  font-size:25px;
+  gap:10px;
+  color:chocolate;
+}
+#contactForm input, #contactForm textarea, #contactForm button{
+  font-size:15px;
+  padding:10px 15px;
+  border-radius: 10px;
+}
+#contactForm button{
+  background-color: rgba(165, 117, 55, 0.925);
+}
+#contactForm button:hover{
+  background-color: rgb(225, 198, 138);
+  font-weight: 800;
+}
+#contact-channels{
+  margin-top:50px;
+  width:100vw;
+  background-color: rgba(165, 117, 55, 0.925);
+  Padding:10px 30px;
+}
+#contact-channels i{
+  font-size:30px;
+  padding:5px 7vh;
+  color: rgb(0, 0, 0);
+}
+#contact-channels i:hover{
+  font-size:30px;
+  color: rgb(255, 255, 255);
+}
+#copyright{
+  font-size:20px;
+  padding:10px;
+}
+
+
+@media (max-width:800px){
+  
+#accomplishment-feeedback{
+  flex-direction: column;
+}
+#accomplishment-container input{
+  width:80vw;
+}
+#accomplishment-container button{
+  width: 40vw;
+}
+
+
+#accomplishment-container p{
+  width: 90vw;
+}
+
+#contactForm{
+  width:80vw;
+}
+#contactForm button{
+  width: 40vw;
+}
+#accomplishment-channels{
+  Padding:5px 15px;
+}
+#accomplishment-channels i{
+  font-size:25px;
+}
+}

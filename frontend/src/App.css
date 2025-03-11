@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Electrolize", serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+}
+*::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
+body {
+  background: linear-gradient(to right, #e9eea5 15%, #f1b1e4); /* Gradient from left to right */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  margin: 0;
+  overflow-x: hidden;
+}

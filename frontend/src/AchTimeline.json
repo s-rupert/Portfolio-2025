@@ -1,0 +1,61 @@
+[
+  {
+    "name":["Diploma in Computer Application","started High School", "Beginning of IT Career","started working as an Administrative Assistant"],
+    "year":2018,
+    "age":16.5,
+    "img":"./Scrolls/Scrollopen1.png",
+    "detail":"null"
+  },
+  {
+    "name":["Not Available"],
+    "year":2017,
+    "age":17,
+    "detail":"null"
+  },
+  { 
+    "name":["Started Working as a Graphic Designer","Started Bechelor in Computer Application"],
+    "year":2021,
+    "age":18,
+    "img":"./Scrolls/Scrollopen2.png",
+    "detail":"null"
+  },
+  {
+    "name":["Not Available"],
+    "year":2020,
+    "age":19,
+    "detail":"null"
+  },
+  {
+    "name":["Completed IELTS Training","Came to Canada for Higher Studies"],
+    "year":2023,
+    "age": 19.5,
+    "img":"./Scrolls/Scrollopen3.png",
+    "detail":"null"
+  },
+  {
+    "name":["Not Available"],
+    "year":2022,
+    "age": 20,
+    "detail":"null"
+  },
+  {
+    "name":["Completed FreeCodeCamp Training","Build Portfolio Website","Learn New Programming Language"],
+    "year":2024,
+    "age":20.5,
+    "img":"./Scrolls/Scrollopen4.png",
+    "detail":"null"
+  },
+  {
+    "name":["Looking for Internship or Job in IT sector"],
+    "year":2025,
+    "age":21.5,
+    "img":"./Scrolls/Scrollopen5.png",
+    "detail":"null"
+  },
+  {
+    "name":["Upcoming"],
+    "year":2027,
+    "age":22,
+    "detail":"null"
+  }
+]

@@ -1,0 +1,19 @@
+#scroll-section {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;  /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping of flex items */
+    width: 100vw; /* Ensures the container takes the full viewport width */
+}
+
+#scroll-section div{
+    flex: 0 0 400px;
+
+    width: 400px;
+    display: flex;
+    height: 500px;
+    background-color: grey;text-align: center;
+    align-items: center;
+    justify-content: center;
+}

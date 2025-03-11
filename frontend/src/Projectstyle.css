@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
+iframe {
+    transition: left 1.5s ease-in-out, right 1.5s ease-in-out, height 1.5s ease-in-out, width 1.5s ease-in-out;
+}
+
+#project-section {
+    position: relative;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+
+}
+
+#title-p {
+    font-family: "Rubik Wet Paint", serif;
+    font-weight: 400;
+    color: rgb(240, 145, 3);
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+    font-size: 55px;
+}
+#p-detail{
+    position: relative;
+    font-size: 25px;
+}
+
+#options {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#options button {
+    position: relative;
+    margin: 3vw 1vw;
+    padding: 0.7vw 1.2vw;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 2vw;
+    border: none;
+    box-shadow: inset 0 0.5vw 1vw black;
+    background-color: rgba(255, 140, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#options button:hover {
+    background-color: rgb(255, 119, 0);
+    box-shadow: 0 0.5vw 1vw black;
+}
+
+#options .active {
+    box-shadow: 0 0.5vw 1vw black;
+    background-color: rgb(255, 119, 0);
+}
+
+#project-card {
+    position: relative;
+    display: flex;
+    margin: vw 0;
+    margin-left: -3vw;
+    white-space: nowrap;
+    overflow:hidden;
+    align-items: center;
+    height: 500px;
+}
+
+#project-card::after {
+    content: "";
+    position: fixed;
+    width: 15vw;
+    left: 0;
+    height: 100%;
+    z-index: 100;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0)10%, #e9eea5);
+}
+
+#project-card::before {
+    content: "";
+    position: fixed;
+    width: 15vw;
+    z-index: 100;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0)10%, #f1b1e4);
+}
+
+#project-card .card {
+    position: absolute;
+    opacity: 0.2;
+    flex-shrink: 0;
+    width: 230px;
+    height: 330px;
+    background-color: rgb(135, 177, 180);
+    border: 1px solid #ccc;
+    border-radius: 1vw;
+    box-shadow: 0vw 0.3vw 0.4vw rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: left 1.5s ease-in-out, right 1.5s ease-in-out, height 1.5s ease-in-out, width 1.5s ease-in-out;
+}
+
+
+#project-card .card-1,
+#project-card .card-5 {
+    opacity: 0.2;
+}
+#project-card .card-3 {
+
+    width: 370px;
+    height: 470px;
+    z-index: 22;
+    opacity:1;
+}
+
+#project-card .card-2,
+#project-card .card-4 {
+    opacity: 0.5;
+    width: 270px;
+    height: 370px;
+}
+
+
+
+/* project info card-1,card-5 */
+.card iframe {
+    width: 230px;
+    height: 129px;
+}
+
+.card #p-title {
+    margin: 5px;
+    font-size: 20px;
+}
+
+.card #p-stack {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card #p-stack p {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.card #line-left,
+.card #line-right {
+    width: 70px;
+    height: 5px;
+    background-color: black;
+}
+
+.card #p-res {
+    margin-top: 5px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.card #p-res p {
+    padding: 3px 5px;
+    color: rgb(255, 255, 255);
+    border-radius: 1vw;
+}
+
+.card #pc-detail {
+    white-space: normal;
+    font-size: 13px;
+    margin: 10px;
+    line-height: 17px;
+    text-align: justify;
+}
+
+.card #b-detail {
+    display: none;
+}
+
+/* project info card-3 */
+.card-3 iframe {
+    width: 370px;
+    height: 208px;
+}
+
+.card-3 #p-title {
+    margin: 5px;
+    font-size: 30px;
+}
+
+.card-3 #p-stack {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card-3 #p-stack p {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.card-3 #line-left,
+.card-3 #line-right {
+    width: 120px;
+    height: 8px;
+    background-color: black;
+}
+
+.card-3 #p-res {
+    margin: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    flex-wrap: wrap;
+}
+
+.card-3 #p-res p {
+    padding: 5px 7px;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.card-3 #pc-detail {
+    white-space: normal;
+    margin: 15px;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 22px;
+}
+
+.card-3 #b-detail {
+    display: none;
+    font-size: 1vw;
+    position: absolute;
+    bottom: 0.5vw;
+    left: 130px;
+    padding: 0.3vw 0.5vw;
+    background-color: rgb(38, 164, 173);
+    border: none;
+    border-radius: 10.3vw;
+    color:Black;
+    text-decoration: none;
+}
+.card-3 #b-detail:hover {
+    background-color: rgba(38, 164, 173, 0.5);
+}
+.card-3:hover #b-detail{
+    display:block;
+}
+
+/* project info card-2,card-4 */
+.card-2 iframe,
+.card-4 iframe {
+    width: 270px;
+    height: 152px;
+}
+
+.card-2 #p-title,
+.card-4 #p-title {
+    margin: 7px;
+    font-size: 20px;
+}
+
+.card-2 #p-stack,
+.card-4 #p-stack {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card-2 #p-stack p,
+.card-4 #p-stack p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card-2 #line-left,
+.card-2 #line-right,
+.card-4 #line-left,
+.card-4 #line-right {
+    width: 75px;
+    height: 6px;
+    background-color: black;
+}
+
+.card-2 #p-res,
+.card-4 #p-res {
+    margin: 7px 5px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.card-2 #p-res p,
+.card-4 #p-res p {
+    padding: 5px 10px;
+    color: rgb(255, 255, 255);
+    border-radius: 1vw;
+}
+
+.card-2 #pc-detail,
+.card-4 #pc-detail {
+    white-space: normal;
+    font-size: 14px;
+    margin: 7px;
+    text-align: justify;
+    line-height: 16px;
+}
+
+.card-2 #b-detail,
+.card-4 #b-detail {
+    display: none;
+
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+    touch-action: none;
+  }
+
+
+/* If the screen width is less than 700 or specifically for mobile phones */
+@media (max-width: 700px) {
+ 
+
+    #title-p {
+        font-size: 7vw;
+    }
+    #p-detail{
+        margin-top: 10px;
+        font-size:3vw;
+    }
+
+    #options button {
+        margin: 5vw 1vw;
+        padding: 1vw 1.5vw;
+        font-size: 2.5vw;
+    }
+
+
+
+    #project-card {
+        margin-top: 20px;
+        height: 70vw;
+    }
+    #project-card::after, #project-card::before{
+        height: 65vw;
+    }
+
+    #project-card .card {
+        width: 30vw;
+        height: 45vw;
+    }
+
+    #project-card .card-3 {
+        width: 50vw;
+        height: 70vw;
+    }
+
+    #project-card .card-2,
+    #project-card .card-4 {
+        width: 40vw;
+        height: 55vw;
+    }
+
+    /* project info card-1,card-5 */
+    .card iframe {
+        width: 30vw;
+        height: 16.875vw;
+    }
+
+    .card #p-title {
+        font-size: 3vw;
+    }
+
+    .card #p-stack {
+        gap: 1vw;
+    }
+
+    .card #p-stack p {
+        font-size: 2.5vw;
+    }
+
+    .card #line-left,
+    .card #line-right {
+        width: 6.5vw;
+        height: 0.8vw;
+    }
+
+    .card #p-res {
+        margin-top: 0.5vw;
+        font-size: 1.7vw;
+        gap: 0.8vw;
+    }
+
+    .card #p-res p {
+        padding: 0.5vw 0.8vw;
+    }
+
+    .card #pc-detail {
+        font-size: 2vw;
+        margin: 1vw;
+        line-height: 1.9vw;
+        text-align: justify;
+    }
+
+    /* project info card-3 */
+    .card-3 iframe {
+        width: 50vw;
+        height: 28.125vw;
+    }
+
+    .card-3 #p-title {
+        font-size: 4vw;
+    }
+
+    .card-3 #p-stack {
+        gap: 1.5vw;
+    }
+
+    .card-3 #p-stack p {
+        font-size: 3.5vw;
+    }
+
+    .card-3 #line-left,
+    .card-3 #line-right {
+        width: 12vw;
+        height: 1vw;
+    }
+
+    .card-3 #p-res {
+        margin-top: 1vw;
+        gap: 1.5vw;
+        font-size: 2.5vw;
+    }
+
+    .card-3 #p-res p {
+        padding: 0.5vw 1.5vw;
+    }
+
+    .card-3 #pc-detail {
+        font-size: 2.5vw;
+        line-height: 3vw;
+        margin:1.5vw;
+    }
+
+    .card-3 #b-detail {
+        position:absolute;
+        display: block;
+        font-size: 3vw;
+        bottom: 4vw;
+        left: 17vw;
+        padding: 0.7vw 1.5vw;
+
+    }
+
+
+    /* project info card-2,card-4 */
+    .card-2 iframe,
+    .card-4 iframe {
+        width: 40vw;
+        height: 22.5vw;
+    }
+
+    .card-2 #p-title,
+    .card-4 #p-title {
+        font-size: 3.5vw;
+    }
+
+    .card-2 #p-stack,
+    .card-4 #p-stack {
+        gap: 1.5vw;
+    }
+
+    .card-2 #p-stack p,
+    .card-4 #p-stack p {
+        font-size: 2.8vw;
+    }
+
+    .card-2 #line-left,
+    .card-2 #line-right,
+    .card-4 #line-left,
+    .card-4 #line-right {
+        width: 10vw;
+        height: 0.8vw;
+    }
+
+    .card-2 #p-res,
+    .card-4 #p-res {
+        margin-top: 1vw;
+        font-size: 2.5vw;
+        gap: 0.7vw;
+    }
+
+    .card-2 #p-res p,
+    .card-4 #p-res p {
+        padding: 0.5vw 0.8vw;
+    }
+
+    .card-2 #pc-detail,
+    .card-4 #pc-detail {
+        font-size: 2vw;
+        margin: 1vw;
+        line-height: 2.5vw;
+    }
+}

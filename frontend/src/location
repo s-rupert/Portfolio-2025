@@ -1,0 +1,2 @@
+Percentage = fLocation = [(screenWidth / 2) - 685 - (padding * 2), (screenWidth / 2) - 455 - padding, (screenWidth / 2) - 185, (screenWidth / 2) + 185 + padding, (screenWidth / 2) + 455 + (padding * 2)]
+fLocation = [((screenWidth / 2) - ((screenWidth * 95) / 100)) - (padding * 2), ((screenWidth / 2) - ((screenWidth * 65) / 100)) - padding, ((screenWidth / 2) - ((screenWidth * 25) / 100)), ((screenWidth / 2) + ((screenWidth * 25) / 100)) + padding, ((screenWidth / 2) + ((screenWidth * 65) / 100)) + (padding * 2)]

@@ -1,0 +1,38 @@
+[
+    {
+      "name": "Full-Stack Development",
+      "detail": "Building dynamic, scalable web applications with a seamless integration of front-end and back-end technologies. Skilled in crafting user-friendly interfaces while ensuring robust server-side performance.",
+      "tools": ["React", "Vite", "Node.js", "MongoDB", "Java", "Express.js"],
+      "logos":["React.png","Vite.png","Nodejs.png","mongodb.png","java.png","expressjs.png"]
+    },
+    {
+      "name": "UI/UX Development",
+      "detail": "Designing engaging and intuitive user interfaces with a deep understanding of the user's needs. Focused on creating aesthetically pleasing and functional designs that enhance the overall experience.",
+      "tools": ["Figma", "Bootstrap", "CSS","Canva","HTML5"],
+      "logos":["Figma.svg","Bootstrap.png","CSS-Logo.png","Canva.png","HTML5.png"]
+    },
+    {
+      "name": "3D & Interactive Web Development",
+      "detail": "Creating stunning 3D visuals and interactive web experiences that push the boundaries of digital design. Expert in building immersive environments and animations for the web using advanced WebGL techniques.",
+      "tools": ["Three.js", "Blender", "Mixamo"],
+      "logos":["Three.png","Blender.png","mixamo.png"]
+    },
+    {
+      "name": "Project Management & Problem-Solving",
+      "detail": "Effectively managing projects from start to finish, ensuring timely delivery and high-quality results. Adept at solving complex problems and optimizing workflows for maximum efficiency.",
+      "tools": ["Spreadsheet", "Notion", "GitHub", "VS-code"],
+      "logos": ["Spreadsheet.png","notion.png","GitHub.png","vscode.png"]
+    },
+    {
+      "name": "API & Database Design",
+      "detail": "Designing powerful, scalable APIs and databases that support seamless data flow and ensure high performance. Experienced in building systems that are both robust and efficient.",
+      "tools": ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "MySQL"],
+      "logos":["Nodejs.png","expressjs.png","mongodb.png","PSQL.png","MySQL.png"]
+    },
+    {
+      "name":"Others",
+      "detail": "Other computer skills to enhance my overall workflow as well as stay creative, Also learnt to explore more into the technical world",
+      "tools":["C","Python","Java","MS-Office","Photoshop","AdobeIndesign"],
+      "logos":["c.png","Python.png","java.png","MS_office.png","photoshop.png","ind.png"]
+    }
+  ]
