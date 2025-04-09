@@ -8,21 +8,6 @@ import { Skills } from './Skills';
 import { Footer } from './Footer';
 function App() {
   
-  useEffect(() => {
-    let width = window.screen.width;
-    let resizeTimer;
-    const handleResize = () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        window.location.reload();
-      }, 100);
-    };
-    if(width>700){
-      window.addEventListener("resize", handleResize);
-    }
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
     <div id="main-section">
       <Homepage />

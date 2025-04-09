@@ -131,7 +131,7 @@ const Chart = () => {
       .enter()
       .append("image")
       .attr("id", "Cscroll")
-      .attr("href", "./Scrolls/Scrollclose.png")
+      .attr("href", "./Scrolls/Scrollclose.webp")
       .attr("alt", "Scroll Image")
       .attr("x", d => { return screenWidth >= 800 ? xScale(d.age) - screenWidth * 4 / 100 : xScale(d.age) - screenWidth * 8/ 100 })
       .attr("y", d => { return screenWidth >= 800 ? yScale(parseYear(d.year)) - screenWidth * 3 / 100 : yScale(parseYear(d.year)) - 50 })
@@ -160,7 +160,7 @@ const Chart = () => {
             
           Scrollactive = false;
         } else {
-          imgElement.attr("href", "./Scrolls/Scrollclose.png")
+          imgElement.attr("href", "./Scrolls/Scrollclose.webp")
             .attr("id", "Cscroll")
             .attr("width", (d) => { return screenWidth >= 800 ?screenWidth * 7 / 100:screenWidth * 14 / 100  })
             .attr("height",(d) => { return screenWidth >= 800 ?screenWidth * 7 / 100:screenWidth * 14 / 100  } )

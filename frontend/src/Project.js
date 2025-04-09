@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./Projectstyle.css";
 const Product = require("./Product.json");
 
@@ -48,17 +48,19 @@ const Project = () => {
 
   const clickHandler = (btnNum) => {
     const types = ["All", "Javascript", "Database", "FCC", "Others"];
+
+    let totalData = 0;
     let positionArray = [];
     let locationArray = [];
     const buttons = document.querySelectorAll("#options button");
     buttons.forEach((button) => button.classList.remove("active"));
     buttons[btnNum - 1].classList.add("active");
-    if (btnNum === 1) {
+    if (btnNum == 1) {
       setProject(Product);
-      if (Product.length === 1) {
+      if (Product.length == 1) {
         locationArray.push(fLocation[2]);
         positionArray.push(3);
-      } else if (Product.length === 2) {
+      } else if (Product.length == 2) {
         positionArray.push(2, 3);
         locationArray.push(fLocation[1], fLocation[2]);
       } else if (Product.length <= 5) {
@@ -79,15 +81,15 @@ const Project = () => {
     } else {
       let Matched = [];
       for (let i = 0; i < Product.length; i++) {
-        if (Product[i].type === types[btnNum - 1]) {
+        if (Product[i].type == types[btnNum - 1]) {
           Matched.push(Product[i]);
         }
       }
       setProject(Matched);
-      if (Matched.length === 1) {
+      if (Matched.length == 1) {
         locationArray.push(fLocation[2]);
         positionArray.push(3);
-      } else if (Matched.length === 2) {
+      } else if (Matched.length == 2) {
         positionArray.push(2, 3);
         locationArray.push(fLocation[1], fLocation[2]);
       } else if (Matched.length <= 5) {
@@ -127,7 +129,7 @@ const Project = () => {
 
         cards[i].classList.add("card", "card-" + templocations[1][i]);
 
-        if (templocations[1][i] === 3) {
+        if (templocations[1][i] == 3) {
           cards[i].style.zIndex = 22;
         } else {
           cards[i].style.zIndex = templocations[1][i];
@@ -156,7 +158,7 @@ const Project = () => {
         templocations[1][i] = templocations[1][i - 1];
 
         cards[i].classList.add("card", "card-" + templocations[1][i]);
-        if (templocations[1][i] === 3) {
+        if (templocations[1][i] == 3) {
           cards[i].style.zIndex = 22;
         } else {
           cards[i].style.zIndex = templocations[1][i];
@@ -200,6 +202,7 @@ const Project = () => {
         onClick={() => cardClickHandler(positions[i])}
       >
         <iframe
+          loading="lazy"
           src={Project[i].url}
           title="YouTube video player"
           frameBorder="0"
@@ -223,60 +226,22 @@ const Project = () => {
         </div>
         <div id="pc-detail">{Project[i].description}</div>
         {Project[i].github_link !== "empty" ? (
-          <a
-            id="b-detail"
-            href={Project[i].github_link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Github Link
-          </a>
+          <div
+          id="b-detail"
+          ><a
+          id="github-link"  
+          href={Project[i].github_link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github Link
+        </a></div>
         ) : null}
       </div>
     );
   }
 
-  // identifying touch
-  const [startPos, setStartPos] = useState(null);
-  const [endPos, setEndPos] = useState(null);
-
-  const handleStart = (event) => {
-    const x = event.clientX || event.touches?.[0]?.clientX;
-    setStartPos(x);
-  };
-  
-  const handleEnd = (event) => {
-    const x = event.clientX || event.changedTouches?.[0]?.clientX;
-    console.log(x)
-    setEndPos(x);
-  };
-
-  useEffect(() => {
-    if (startPos && endPos) {
-      if (startPos > endPos) {
-        cardClickHandler(4); 
-      } else if (startPos < endPos) {
-        cardClickHandler(2); 
-      }
-    }
-  }, [endPos]);
-
-  useEffect(() => {
-    const element = document.getElementById("project-card");
-
-    // Add event listeners
-    element.addEventListener("touchstart", handleStart, { passive: false });
-    element.addEventListener("touchend", handleEnd, { passive: false });
-
-    // Cleanup event listeners
-    return () => {
-      element.removeEventListener("touchstart", handleStart);
-      element.removeEventListener("touchend", handleEnd);
-    };
-  }, [startPos, endPos]);
-
-
-  //Handling the card scrolls
+  //Handling the card scrolls on shift + scroll
   useEffect(() => {
     const colorCard = document.getElementById("project-card");
     if (!colorCard) return;
@@ -286,9 +251,9 @@ const Project = () => {
       event.preventDefault();
 
       if (event.shiftKey && event.deltaY < 0) {
-        cardClickHandler(4);
-      } else if (event.shiftKey && event.deltaY > 0) {
         cardClickHandler(2);
+      } else if (event.shiftKey && event.deltaY > 0) {
+        cardClickHandler(4);
       }
     };
 
@@ -300,6 +265,69 @@ const Project = () => {
       colorCard.removeEventListener("wheel", handleScrollWithLatestState);
     };
   }, [locations, positions]);
+
+  //Handling the card scrolls on drag
+  useEffect(() => {
+    const colorCard = document.getElementById("project-card");
+    if (!colorCard) return;
+
+    let isDragging = false;
+    let startX, scrollLeft;
+
+    const handleMouseDown = (e) => {
+      isDragging = true;
+      startX = getEventCoords(e).x - colorCard.offsetLeft;
+      scrollLeft = colorCard.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+      isDragging = false;
+    };
+
+    const handleMouseUp = () => {
+      isDragging = false;
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = getEventCoords(e).x - colorCard.offsetLeft;
+      const walk = (x - startX) * 2;
+      cardClickHandler(walk > 0 ? 2 : 4);
+    };
+
+    colorCard.addEventListener("mousedown", handleMouseDown);
+    colorCard.addEventListener("mouseleave", handleMouseLeave);
+    colorCard.addEventListener("mouseup", handleMouseUp);
+    colorCard.addEventListener("mousemove", handleMouseMove);
+    colorCard.addEventListener("touchstart", handleMouseDown);
+    colorCard.addEventListener("touchend", handleMouseUp);
+    colorCard.addEventListener("touchmove", handleMouseMove, { passive: false });
+
+    return () => {
+      colorCard.removeEventListener("mousedown", handleMouseDown);
+      colorCard.removeEventListener("mouseleave", handleMouseLeave);
+      colorCard.removeEventListener("mouseup", handleMouseUp);
+      colorCard.removeEventListener("mousemove", handleMouseMove);
+      colorCard.removeEventListener("touchstart", handleMouseDown);
+      colorCard.removeEventListener("touchend", handleMouseUp);
+      colorCard.removeEventListener("touchmove", handleMouseMove);
+    };
+  }, [ locations, positions ]);
+
+// Get coordinates for mouse or touch
+function getEventCoords(e) {
+  if (e.touches) {
+    return {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY
+    };
+  }
+  return {
+    x: e.clientX,
+    y: e.clientY
+  };
+}
 
 
   return (

@@ -12,10 +12,7 @@ const port = 5000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(cors({
-    origin: 'http://localhost:3000',  // Allow frontend running on localhost:3000
-    methods: ['GET', 'POST'],
-  }));
+app.use(cors()); // Enable CORS for all routes
 
 // Serve the static HTML form
 app.use(express.static('public'));
@@ -23,7 +20,7 @@ app.use(express.static('public'));
 // POST route for form submission
 app.post('/submit', (req, res) => {
     const { name, email, message } = req.body;
-
+    console.log(`Received message from ${name} (${email}): ${message}`);
     // Setup email transporter using environment variables
     const transporter = nodemailer.createTransport({
         service: 'gmail',

@@ -62,7 +62,6 @@ iframe {
     position: relative;
     display: flex;
     margin: vw 0;
-    margin-left: -3vw;
     white-space: nowrap;
     overflow:hidden;
     align-items: center;
@@ -186,12 +185,12 @@ iframe {
 /* project info card-3 */
 .card-3 iframe {
     width: 370px;
-    height: 208px;
+    height: 200px;
 }
 
 .card-3 #p-title {
     margin: 5px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .card-3 #p-stack {
@@ -238,23 +237,25 @@ iframe {
 }
 
 .card-3 #b-detail {
-    display: none;
-    font-size: 1vw;
-    position: absolute;
-    bottom: 0.5vw;
-    left: 130px;
-    padding: 0.3vw 0.5vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-3 #b-detail a{
+    width: 100px;
+    text-decoration: none;
+    color:Black;
+    font-size: 15px;
+    padding: 5px 5px;
     background-color: rgb(38, 164, 173);
     border: none;
     border-radius: 10.3vw;
-    color:Black;
-    text-decoration: none;
+    margin-bottom: 10px;
 }
-.card-3 #b-detail:hover {
+.card-3 #b-detail a:hover {
     background-color: rgba(38, 164, 173, 0.5);
-}
-.card-3:hover #b-detail{
-    display:block;
 }
 
 /* project info card-2,card-4 */
@@ -338,7 +339,7 @@ iframe {
  
 
     #title-p {
-        font-size: 35px;
+        font-size: 7vw;
     }
     #p-detail{
         margin-top: 10px;
@@ -462,8 +463,8 @@ iframe {
         position:absolute;
         display: block;
         font-size: 3vw;
-        bottom: 4vw;
-        left: 17vw;
+        bottom: 1vw;
+        left: 16vw;
         padding: 0.7vw 1.5vw;
 
     }
